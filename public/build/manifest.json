@@ -1,0 +1,19 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CxAALXvA.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BXSc-_cf.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/attendance.js": {
+    "file": "assets/attendance-Cn-t9655.js",
+    "name": "attendance",
+    "src": "resources/js/attendance.js",
+    "isEntry": true
+  }
+}

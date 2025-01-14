@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  word-wrap: break-word;
+}
+
+tr {
+  height: 50px; /* Adjust based on your design */
+}
+
+th, td {
+  height: 50px;
+}
+
+tr:hover {
+  background-color: rgba(173, 216, 230, 0.3);
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/*Cross Button Icon*/
+@keyframes spinIn {
+  from {
+      transform: rotate(-360deg) scale(0.5) translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: rotate(0deg) scale(1) translateX(0);
+      opacity: 1;
+  }
+}
+
+.animate-spin-in {
+  animation: spinIn 1s ease-in-out forwards;
+}
+
+.hover-highlight:hover {
+  background-color: #6b46c1; /* Purple shade */
+  color: #fff; /* White text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.scale-150 {
+  transform: scale(1.5);
+  transition: transform 0.5s ease-in-out;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+#backgroundImage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  width: 35%; /* Cover the left half */
+  height: 70%;
+  position: fixed;
+  top: -20;
+  left: 0; /* Position it to the left */
+  transform: translateX(-100%); /* Start off-screen to the left */
+
+  /* Add a gradient overlay for transparency effect */
+  mask-image: linear-gradient(to right, black, transparent); /* For WebKit browsers */
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  
+  pointer-events: none; /* Prevents interaction */
+}
+
+#backgroundContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+#modal, #editModal {
+  position: fixed;
+  inset: 0;
+  display: flex, hidden;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background-color: 0px 4px 6px rgba(0, 0, 0, 0.1); /* No background */
+}
+
+#modal > div, #editModal > div {
+  background-color: #fff; /* Opaque modal content */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: For better visibility */
+}
+
+/* Modal content */
+#editBudgetModal > .modal-content {
+  background-color: white; /* Ensure modal content has a solid background */
+  border-radius: 8px; /* Add rounding for better design */
+  max-width: 600px; /* Optional: Control the modal width */
+  padding: 20px; /* Add spacing inside the modal */
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/*button design*/
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  width: auto;
+}
+
+.button-container a,
+.button-container button {
+  flex: 1; /* Optional: Makes buttons equally wide */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+}
+
+.cancel-btn { background-color: #d9534f; }
+.history-btn { background-color: #5bc0de; }
+.save-btn { background-color: #5cb85c; }
+
+.button-container button:hover { opacity: 0.7; }
+
+/*header*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    max-width: 25%;
+}
+
+.header-logo img {
+    width: 100px; /* Adjust logo size as needed */
+    margin-bottom: 10px;
+}
+
+.header-logo p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/*footer*/
+footer {
+  background-color: #CA00FF; /* Bright purple background */
+  color: white;
+  padding: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  max-width: 25%;
+}
+
+.footer-logo img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-links, .footer-account, .footer-contact {
+  max-width: 20%;
+}
+
+.footer-links h4, .footer-account h4, .footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-links ul, .footer-account ul {
+  list-style: none;
+}
+
+.footer-links ul li, .footer-account ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a, .footer-account ul li a, .footer-contact p a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover, .footer-account ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a img {
+  width: 24px; /* Adjust icon size */
+}
